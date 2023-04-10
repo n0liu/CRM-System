@@ -73,3 +73,6 @@ jobs:
           folder: dist
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+          
+      - name: List files in directory
+        run: ls -R
