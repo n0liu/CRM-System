@@ -66,8 +66,8 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy # 部署到 GitHub Pages
-        uses: n0liu/CRM-System@releases/v1
+      - name: Deploy to GitHub Pages # 部署到 GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          branch: gh-pages # 部署到 gh-pages 分支
-          folder: dist # 要部署的文件夹路径
+          branch: gh-pages
+          folder: dist
