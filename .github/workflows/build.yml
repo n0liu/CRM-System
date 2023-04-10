@@ -44,7 +44,8 @@ jobs:
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
-
+          token: ${{ secrets.MY_TOKEN }}
+    
       - name: Setup node
         uses: actions/setup-node@v2
         with:
