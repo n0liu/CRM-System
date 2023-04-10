@@ -60,7 +60,7 @@ class PureHttp {
   /** 请求拦截 */
   private httpInterceptorsRequest(): void {
     PureHttp.axiosInstance.interceptors.request.use(
-      async (config: PureHttpRequestConfig) => {
+      async (config: PureHttpRequestConfig | any) => {
         // 开启进度条动画
         NProgress.start();
         // 优先判断post/get等方法是否传入回掉，否则执行初始化设置等回掉
@@ -97,7 +97,7 @@ class PureHttp {
                         PureHttp.isRefreshing = false;
                       });
                   }
-                  resolve(PureHttp.retryOriginalRequest(config));
+                  resolve(PureHttp.retryOriginalRequest(config) as any);
                 } else {
                   config.headers["Authorization"] = formatToken(
                     data.accessToken
