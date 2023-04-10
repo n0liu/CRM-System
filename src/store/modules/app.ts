@@ -3,7 +3,7 @@ import { appType } from "./types";
 import { defineStore } from "pinia";
 import { getConfig } from "@/config";
 import { deviceDetection, storageLocal } from "@pureadmin/utils";
-
+console.log(getConfig());
 export const useAppStore = defineStore({
   id: "pure-app",
   state: (): appType => ({

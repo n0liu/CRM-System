@@ -37,9 +37,9 @@ const {
 </script>
 
 <template>
-  <div class="main">
-    <tree class="w-[17%] float-left" />
-    <div class="float-right w-[81%]">
+  <div class="flex main">
+    <tree class="w-[200px] flex-shrink-0" />
+    <div class="ml-[10px] flex-1">
       <el-form
         ref="formRef"
         :inline="true"

@@ -12,6 +12,7 @@ import themePreprocessorPlugin from "@pureadmin/theme";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import DefineOptions from "unplugin-vue-define-options/vite";
 import { genScssMultipleScopeVars } from "../src/layout/theme";
+import AutoImport from "unplugin-auto-import/vite";
 
 export function getPluginsList(
   command: string,
@@ -29,6 +30,9 @@ export function getPluginsList(
     }),
     // jsx、tsx语法支持
     vueJsx(),
+    AutoImport({
+      imports: ["vue", "vue-router"]
+    }),
     VITE_CDN ? cdn : null,
     configCompressPlugin(VITE_COMPRESSION),
     DefineOptions(),
