@@ -32,6 +32,7 @@ pnpm serve
 ```bash
 pnpm build
 ```
+
 ## 如何贡献
 
 非常欢迎您的加入！[提一个 Issue](https://github.com/n0liu/CRM-System/issues/new) 或者提交一个 `Pull Request`
