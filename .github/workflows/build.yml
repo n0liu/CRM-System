@@ -45,7 +45,7 @@ jobs:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
           token: ${{ secrets.MY_TOKEN }}
-    
+
       - name: Setup node
         uses: actions/setup-node@v2
         with:
@@ -60,4 +60,10 @@ jobs:
       - name: Build
         run: |
           pnpm install --no-frozen-lockfile
-          pnpm build
+          pnpm lint
+          pnpm typecheck
+
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
