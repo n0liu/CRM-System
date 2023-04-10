@@ -61,10 +61,3 @@ jobs:
         run: |
           pnpm install --no-frozen-lockfile
           pnpm build
-        
-      - name: Deploy to GitHub Pages # 部署到 GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.DEPLOY_KEY }}
-          BRANCH: gh-pages
-          FOLDER: dist
