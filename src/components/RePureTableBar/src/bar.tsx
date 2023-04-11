@@ -111,7 +111,7 @@ export default defineComponent({
             <p class="font-bold truncate">{props.title}</p>
             <div class="flex items-center justify-around">
               {slots?.buttons ? (
-                <div class="flex mr-4">{slots.buttons()}</div>
+                <div class="flex mr-4">{slots?.buttons()}</div>
               ) : null}
               {props.tableRef?.size ? (
                 <>
