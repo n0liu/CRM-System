@@ -157,10 +157,6 @@ export function useUser() {
       });
   }
 
-  function handleUpdate(row) {
-    console.log(row);
-  }
-
   function handleDelete(row) {
     console.log(row);
   }
@@ -193,6 +189,23 @@ export function useUser() {
     onSearch();
   };
 
+  // 新增用户
+  const isShow: Ref<boolean> = ref(false);
+  const title: Ref<string> = ref("新增用户");
+  const userInfo: Ref<any> = ref();
+  const handleAddUser = () => {
+    isShow.value = true;
+    title.value = "新增用户";
+    userInfo.value = {};
+  };
+
+  // TODO: 编辑用户
+  function handleUpdate(row) {
+    isShow.value = true;
+    title.value = "编辑用户";
+    userInfo.value = row;
+  }
+
   onMounted(() => {
     onSearch();
   });
@@ -210,6 +223,10 @@ export function useUser() {
     handleDelete,
     handleSizeChange,
     handleCurrentChange,
-    handleSelectionChange
+    handleSelectionChange,
+    handleAddUser,
+    isShow,
+    title,
+    userInfo
   };
 }

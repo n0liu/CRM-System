@@ -4,6 +4,7 @@ import tree from "./tree.vue";
 import { useUser } from "./hook";
 import { PureTableBar } from "@/components/RePureTableBar";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
+import addUserAndEditUser from "./components/addUserAndEditUser.vue";
 
 import Role from "@iconify-icons/ri/admin-line";
 import Password from "@iconify-icons/ri/lock-password-line";
@@ -32,7 +33,11 @@ const {
   handleDelete,
   handleSizeChange,
   handleCurrentChange,
-  handleSelectionChange
+  handleSelectionChange,
+  handleAddUser,
+  isShow,
+  title,
+  userInfo
 } = useUser();
 </script>
 
@@ -90,7 +95,11 @@ const {
 
       <PureTableBar title="用户管理" @refresh="onSearch">
         <template #buttons>
-          <el-button type="primary" :icon="useRenderIcon(AddFill)">
+          <el-button
+            type="primary"
+            :icon="useRenderIcon(AddFill)"
+            @click="handleAddUser"
+          >
             新增用户
           </el-button>
         </template>
@@ -180,6 +189,7 @@ const {
         </template>
       </PureTableBar>
     </div>
+    <addUserAndEditUser v-model="isShow" :title="title" :userInfo="userInfo" />
   </div>
 </template>
 

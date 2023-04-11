@@ -52,6 +52,7 @@ specifiers:
   js-cookie: ^3.0.1
   jsbarcode: ^3.11.5
   lint-staged: 11.1.2
+  lodash: ^4.17.21
   md-editor-v3: ^2.7.2
   mitt: ^3.0.0
   mockjs: ^1.1.0
@@ -131,6 +132,7 @@ dependencies:
   element-resize-detector: registry.npmmirror.com/element-resize-detector/1.2.4
   js-cookie: registry.npmmirror.com/js-cookie/3.0.1
   jsbarcode: registry.npmmirror.com/jsbarcode/3.11.5
+  lodash: registry.npmmirror.com/lodash/4.17.21
   md-editor-v3: registry.npmmirror.com/md-editor-v3/2.11.0_vue@3.2.47
   mitt: registry.npmmirror.com/mitt/3.0.0
   mockjs: registry.npmmirror.com/mockjs/1.1.0
