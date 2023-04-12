@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useRole } from "./hook";
 import { PureTableBar } from "@/components/RePureTableBar";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
+import addRoleAndEditRole from "./components/addRoleAndEditRole.vue";
 
 import Database from "@iconify-icons/ri/database-2-line";
 import More from "@iconify-icons/ep/more-filled";
@@ -31,7 +32,11 @@ const {
   handleDelete,
   handleSizeChange,
   handleCurrentChange,
-  handleSelectionChange
+  handleSelectionChange,
+  handleAddRole,
+  isShow,
+  title,
+  roleInfo
 } = useRole();
 </script>
 
@@ -87,7 +92,11 @@ const {
 
     <PureTableBar title="角色列表" @refresh="onSearch">
       <template #buttons>
-        <el-button type="primary" :icon="useRenderIcon(AddFill)">
+        <el-button
+          type="primary"
+          :icon="useRenderIcon(AddFill)"
+          @click="handleAddRole"
+        >
           新增角色
         </el-button>
       </template>
@@ -177,6 +186,8 @@ const {
         </pure-table>
       </template>
     </PureTableBar>
+
+    <addRoleAndEditRole v-model="isShow" :title="title" :userInfo="roleInfo" />
   </div>
 </template>
 
