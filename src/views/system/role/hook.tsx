@@ -150,10 +150,6 @@ export function useRole() {
       });
   }
 
-  function handleUpdate(row) {
-    console.log(row);
-  }
-
   function handleDelete(row) {
     console.log(row);
   }
@@ -186,6 +182,22 @@ export function useRole() {
     onSearch();
   };
 
+  // 新增角色
+  const isShow: Ref<boolean> = ref(false);
+  const title: Ref<string> = ref("新增角色");
+  const roleInfo: Ref<any> = ref();
+  const handleAddRole = () => {
+    isShow.value = true;
+    title.value = "新增角色";
+    roleInfo.value = {};
+  };
+
+  const handleUpdate = row => {
+    isShow.value = true;
+    title.value = "编辑角色";
+    roleInfo.value = row;
+  };
+
   onMounted(() => {
     onSearch();
   });
@@ -203,6 +215,10 @@ export function useRole() {
     handleDelete,
     handleSizeChange,
     handleCurrentChange,
-    handleSelectionChange
+    handleSelectionChange,
+    handleAddRole,
+    isShow,
+    title,
+    roleInfo
   };
 }
